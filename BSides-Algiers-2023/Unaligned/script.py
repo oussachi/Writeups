@@ -2,8 +2,8 @@ from pwn import *
 
 elf = ELF('./unaligned')
 context.binary = elf
-p = process(elf.path)
-#p = remote(host='unaligned.bsides.shellmates.club', port=443, ssl=True)
+#p = process(elf.path)
+p = remote(host='unaligned.bsides.shellmates.club', port=443, ssl=True)
 libc = ELF('./libc.so.6')
 
 p.recvuntil('Gift: ')

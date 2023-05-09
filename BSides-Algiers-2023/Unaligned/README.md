@@ -63,4 +63,4 @@ p.interactive()
 
 # Flag
 
-`shellmates{SOrRY_fOR_f0RciBLy_Untify1ng_0ne_g4DGet_CoN$}`
+`shellmates{SOrRY_fOR_f0RciBLy_Un$4tify1ng_0ne_g4DGet_CoN$tr41nT$}`
