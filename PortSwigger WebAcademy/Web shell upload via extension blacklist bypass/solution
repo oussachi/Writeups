@@ -1,0 +1,8 @@
+- We see that there is an .htaccess file in the path /files/avatars/.htaccess, which is where the avatars are stored
+- We try to upload a malicious confi file to allow the execution of .php files
+- The config file will map .abcd files to mime type application/x-php, to allow for their execution as php files 
+- The file should be named .htaccess too, but we'll name it htaccess and modify its name after interception with burp suite
+- DeepSeek-kun gave us the corresponding .htaccess file
+- It was uploaded successfully :)
+- Now we test with webshell.abcd
+- Bingo :) flag is : TmKoAhbckRDenvUIklIq7YpQ5JteHnGz

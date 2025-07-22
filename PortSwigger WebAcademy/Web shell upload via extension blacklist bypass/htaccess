@@ -1,0 +1,18 @@
+# Enable PHP execution for .abcd files
+<IfModule mod_mime.c>
+    AddType application/x-php .abcd
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Ensure .abcd files are processed by PHP
+    RewriteRule ^(.*\.abcd)$ $1 [L]
+</IfModule>
+
+# Optional: Security hardening (recommended)
+<FilesMatch "\.abcd$">
+    # Force PHP execution even if AddType fails
+    SetHandler application/x-httpd-php
+    # Prevent direct access to .abcd files if not executed
+    Require all granted
+</FilesMatch>
