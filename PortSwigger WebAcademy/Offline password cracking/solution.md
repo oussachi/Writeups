@@ -1,0 +1,2 @@
+- We first obtain the cookie through a simple XSS payload and send it to a webhook
+- We inject the payload in a comment, we obtain the 

@@ -1,0 +1,2 @@
+- After following the password reset link, we see that there is a hidden name field for the username, and it contains our user's name "wiener"
+- Change it to "carlos" and voila
