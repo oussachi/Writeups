@@ -1,2 +1,3 @@
-- We first obtain the cookie through a simple XSS payload and send it to a webhook
-- We inject the payload in a comment, we obtain the 
+- We first obtain the cookie through a simple XSS payload and send it to a webhook (we have to use the academy's exploit server apparently for the `window.location`)
+- We inject the payload in a comment, we obtain the stay-logged-in cookie, which contains a base64-encoded string containing username:md5(password)
+- Use crackstation to get the password
